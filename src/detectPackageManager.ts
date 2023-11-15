@@ -4,7 +4,7 @@ import chalk from "chalk"
 import process from "process"
 import findWorkspaceRoot from "find-yarn-workspace-root"
 
-export type PackageManager = "yarn" | "npm" | "npm-shrinkwrap"
+export type PackageManager = "yarn" | "npm" | "npm-shrinkwrap" | "npm-pack"
 
 function printNoYarnLockfileError() {
   console.log(`

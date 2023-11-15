@@ -86,6 +86,7 @@ if (argv.version || argv.v) {
       appPath,
       argv["use-yarn"] ? "yarn" : null,
     )
+    const useNpmPack = argv["use-npm-pack"]
     const createIssue = argv["create-issue"]
     packageNames.forEach((packagePathSpecifier: string) => {
       makePatch({
@@ -94,6 +95,7 @@ if (argv.version || argv.v) {
         packageManager,
         includePaths,
         excludePaths,
+        useNpmPack,
         patchDir,
         createIssue,
         mode:
@@ -201,6 +203,11 @@ Usage:
         By default, patch-package checks whether you use npm or yarn based on
         which lockfile you have. If you have both, it uses npm by default.
         Set this option to override that default and always use yarn.
+
+    ${chalk.bold("--use-npm-pack")}
+
+        The fastest and the least safe way to create patch files.
+        It uses npm pack to create a tarball and then unpacks it to a temporary directory.
 
     ${chalk.bold("--exclude <regexp>")}
 

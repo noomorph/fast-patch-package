@@ -62,6 +62,7 @@ export function makePatch({
   excludePaths,
   patchDir,
   createIssue,
+  useNpmPack,
   mode,
 }: {
   packagePathSpecifier: string
@@ -71,6 +72,7 @@ export function makePatch({
   excludePaths: RegExp
   patchDir: string
   createIssue: boolean
+  useNpmPack: boolean
   mode: { type: "overwrite_last" } | { type: "append"; name?: string }
 }) {
   const packageDetails = getPatchDetailsFromCliString(packagePathSpecifier)
@@ -200,7 +202,29 @@ export function makePatch({
       }
     })
 
-    if (packageManager === "yarn") {
+    if (useNpmPack) {
+      console.info(
+        chalk.grey("•"),
+        `Installing ${packageDetails.name}@${packageVersion} with npm pack`,
+      )
+      spawnSafeSync(
+        `npm`,
+        ["pack", `${packageDetails.name}@${packageVersion}`],
+        {
+          cwd: tmpRepoNpmRoot,
+          logStdErrOnError: false,
+          stdio: "ignore",
+        },
+      )
+      const tarball = `${packageDetails.name}-${packageVersion}.tgz`
+      spawnSafeSync(`tar`, ["-xzf", tarball], {
+        cwd: tmpRepoNpmRoot,
+        stdio: "ignore",
+      })
+      rimraf(join(tmpRepoNpmRoot, tarball))
+      mkdirpSync(join(tmpRepoNpmRoot, "node_modules"))
+      renameSync(join(tmpRepoNpmRoot, "package"), tmpRepoPackagePath)
+    } else if (packageManager === "yarn") {
       console.info(
         chalk.grey("•"),
         `Installing ${packageDetails.name}@${packageVersion} with yarn`,

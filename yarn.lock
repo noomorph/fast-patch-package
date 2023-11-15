@@ -515,6 +515,14 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
 
+"@types/tar@^6.1.9":
+  version "6.1.9"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@types/tar/-/tar-6.1.9.tgz#1f8f7033494224e61b97895070fafcdd6ec370f3"
+  integrity sha1-H49wM0lCJOYbl4lQcPr83W7DcPM=
+  dependencies:
+    "@types/node" "*"
+    minipass "^4.0.0"
+
 "@types/tmp@^0.0.34":
   version "0.0.34"
   resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.0.34.tgz#4d01c0afce0ac9be316c5fc52b6407c6fc8cd440"
@@ -1103,6 +1111,11 @@ chardet@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
+
+chownr@^2.0.0:
+  version "2.0.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/chownr/-/chownr-2.0.0.tgz#15bfbe53d2eab4cf70f18a8cd68ebe5b3cb1dece"
+  integrity sha1-Fb++U9LqtM9w8YqM1o6+Wzyx3s4=
 
 ci-info@^2.0.0:
   version "2.0.0"
@@ -1921,6 +1934,13 @@ fs-extra@^9.0.0:
     graceful-fs "^4.2.0"
     jsonfile "^6.0.1"
     universalify "^2.0.0"
+
+fs-minipass@^2.0.0:
+  version "2.1.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/fs-minipass/-/fs-minipass-2.1.0.tgz#7f5036fdbf12c63c169190cbe4199c852271f9fb"
+  integrity sha1-f1A2/b8SxjwWkZDL5BmchSJx+fs=
+  dependencies:
+    minipass "^3.0.0"
 
 fs.realpath@^1.0.0:
   version "1.0.0"
@@ -3857,6 +3877,31 @@ minimist@^1.2.6:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
+minipass@^3.0.0:
+  version "3.3.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/minipass/-/minipass-3.3.6.tgz#7bba384db3a1520d18c9c0e5251c3444e95dd94a"
+  integrity sha1-e7o4TbOhUg0YycDlJRw0ROld2Uo=
+  dependencies:
+    yallist "^4.0.0"
+
+minipass@^4.0.0:
+  version "4.2.8"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/minipass/-/minipass-4.2.8.tgz#f0010f64393ecfc1d1ccb5f582bcaf45f48e1a3a"
+  integrity sha1-8AEPZDk+z8HRzLX1gryvRfSOGjo=
+
+minipass@^5.0.0:
+  version "5.0.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/minipass/-/minipass-5.0.0.tgz#3e9788ffb90b694a5d0ec94479a45b5d8738133d"
+  integrity sha1-PpeI/7kLaUpdDslEeaRbXYc4Ez0=
+
+minizlib@^2.1.1:
+  version "2.1.2"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/minizlib/-/minizlib-2.1.2.tgz#e90d3466ba209b932451508a11ce3d3632145931"
+  integrity sha1-6Q00Zrogm5MkUVCKEc49NjIUWTE=
+  dependencies:
+    minipass "^3.0.0"
+    yallist "^4.0.0"
+
 mixin-deep@^1.2.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/mixin-deep/-/mixin-deep-1.3.1.tgz#a49e7268dce1a0d9698e45326c5626df3543d0fe"
@@ -3870,6 +3915,11 @@ mkdirp@0.x, mkdirp@^0.5.1:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
+
+mkdirp@^1.0.3:
+  version "1.0.4"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
+  integrity sha1-PrXtYmInVteaXw4qIh3+utdcL34=
 
 ms@0.7.3:
   version "0.7.3"
@@ -5451,6 +5501,18 @@ synchronous-promise@^2.0.5:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/synchronous-promise/-/synchronous-promise-2.0.6.tgz#de76e0ea2b3558c1e673942e47e714a930fa64aa"
   integrity sha512-TyOuWLwkmtPL49LHCX1caIwHjRzcVd62+GF6h8W/jHOeZUFHpnd2XJDVuUlaTaLPH1nuu2M69mfHr5XbQJnf/g==
+
+tar@^6.2.0:
+  version "6.2.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/tar/-/tar-6.2.0.tgz#b14ce49a79cb1cd23bc9b016302dea5474493f73"
+  integrity sha1-sUzkmnnLHNI7ybAWMC3qVHRJP3M=
+  dependencies:
+    chownr "^2.0.0"
+    fs-minipass "^2.0.0"
+    minipass "^5.0.0"
+    minizlib "^2.1.1"
+    mkdirp "^1.0.3"
+    yallist "^4.0.0"
 
 terminal-link@^2.1.1:
   version "2.1.1"
